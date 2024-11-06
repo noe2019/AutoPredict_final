@@ -1,4 +1,3 @@
-automl
-logs.log
-train copy.csv
-.ipynb_checkpoints
+__pycache__
+fastml
+sample.json

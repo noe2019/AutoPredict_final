@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run app.py
+web: unicorn -w 2 -k uvicorn.workers.UvicornWorker mlapi:app
