@@ -1,0 +1,29 @@
+name: Streamlit Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Install Streamlit
+        run: |
+          pip install streamlit
+
+      - name: Deploy to GitHub Pages
+        run: |
+          streamlit run app.py --server.port=8080
+          gh-pages-deploy
+        env:
+          GH_PAGES_BRANCH: gh-pages
+          GH_PAGES_DIR: ./public

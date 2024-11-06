@@ -1,0 +1,6 @@
+pydantic>=2
+pycaret
+ydata-profiling
+streamlit
+numba
+llvmlite
